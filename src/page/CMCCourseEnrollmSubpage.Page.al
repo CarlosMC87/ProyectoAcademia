@@ -15,6 +15,17 @@ page 50506 "CMC Course Enrollm. Subpage"
                     ApplicationArea = All;
                     ToolTip = 'Course Code', Comment = 'ESP="Codigo curso",ENA="Codi curs"';
                 }
+                field("Customer No."; Rec."Customer No.")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Customer No.', Comment = 'ESP="Nº Cliente",ENA="Nº Client"';
+                }
+
+                field("Course Price"; Rec."Course Price")
+                {
+                    ApplicationArea = All;
+                    ToolTip = 'Course Price', Comment = 'ESP="Precio Curso",ENA="Preu Curs"';
+                }
                 field("Enrollment Date"; Rec."Enrollment Date")
                 {
                     ApplicationArea = All;

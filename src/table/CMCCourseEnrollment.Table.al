@@ -19,6 +19,14 @@ table 50506 "CMC Course Enrollment"
         {
             Caption = 'Enrollment Date', comment = 'ESP="Fecha Inscripción",ENA="Data Inscripció"';
         }
+        field(4; "Course Price"; Decimal)
+        {
+            Caption = 'Course Price', comment = 'ESP="Precio Curso",ENA="Preu Curs"';
+            Editable = false;
+            // Buscamos el precio en la tabla maestra de Cursos
+            FieldClass = FlowField;
+            CalcFormula = lookup("CMC Course".Price where(Code = field("Course Code")));
+        }
     }
 
     keys
