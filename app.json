@@ -1,0 +1,32 @@
+{
+  "id": "e8298be1-2ded-465f-9362-6ca5b9d03994",
+  "name": "ProyectoAcademia",
+  "publisher": "Olivia Sistemas S.L.",
+  "version": "26.0.0.1",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "27.0.0.0",
+  "idRanges": [
+    {
+      "from": 50500,
+      "to": 50549
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "15.0",
+  "features": [
+    "TranslationFile"
+  ]
+}

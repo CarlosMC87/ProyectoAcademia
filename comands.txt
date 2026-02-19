@@ -1,0 +1,12 @@
+git init
+git remote add origin https://github.com/CarlosMC87/ProyectoAcademia.git
+git add .
+git commit -m "Estructura de carpetas para proyecto AL ProyectoAcademia"
+git branch -M main
+git push -u origin main
+
+git push -u origin main --force 
+
+Remove-Item -Recurse -Force .git
+
+New-Guid

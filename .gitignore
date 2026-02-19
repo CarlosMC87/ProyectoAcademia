@@ -1,0 +1,15 @@
+# --- Extensiones de Business Central ---
+.alpackages/
+.snapshots/
+.rad/
+*.app
+
+# --- Configuración de entorno ---
+.vscode/
+
+# --- Otros archivos temporales ---
+*.zip
+*.rar
+
+# --- Traducciones ---
+Translations/
