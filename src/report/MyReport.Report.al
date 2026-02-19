@@ -1,4 +1,4 @@
-report 50500 MyReport
+report 50505 MyReport
 {
 
 }

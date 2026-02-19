@@ -1,4 +1,4 @@
-codeunit 50500 MyCodeunit
+codeunit 50505 MyCodeunit
 {
     procedure MyProcedure()
     begin
