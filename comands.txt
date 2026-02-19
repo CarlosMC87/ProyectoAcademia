@@ -1,12 +1,27 @@
-git init
-git remote add origin https://github.com/CarlosMC87/ProyectoAcademia.git
-git add .
-git commit -m "Estructura de carpetas para proyecto AL ProyectoAcademia"
-git branch -M main
-git push -u origin main
 
-git push -u origin main --force 
+   ////////////////////////////////////
+  // Pasos para publicar en gitHub: //
+ ////////////////////////////////////
 
-Remove-Item -Recurse -Force .git
+1- git init
+2- git remote add origin https://github.com/CarlosMC87/ProyectoAcademia.git
+3- git add .
+4- git commit -m "Estructura de carpetas para proyecto AL ProyectoAcademia"
+5- git branch -M main
 
-New-Guid
+Si no sube, al ser el caso de un proyecto nuevo podemos forzar.
+6- git push -u origin main
+6- git push -u origin main --force 
+
+  //////////////////////////////////////////
+ // Para eliminar el repositorio de git: //
+//////////////////////////////////////////
+
+1- Remove-Item -Recurse -Force .git
+
+   ///////////////////////////////////////////////////////
+  // Para crear un nuevo id en el proyecto y separarlo //
+ // de otras extensiones anteriormente creadas:       //
+///////////////////////////////////////////////////////
+
+1- New-Guid
