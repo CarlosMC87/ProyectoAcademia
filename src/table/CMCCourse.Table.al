@@ -23,13 +23,21 @@ table 50505 "CMC Course"
             ToolTip = 'The price of the course', comment = 'ESP="Precio del curso",ENA="Preu del curs"';
             MinValue = 0;
         }
-        field(4; "Status"; Option)
+        field(4; "Status"; enum "CMC Course Status")
+        {
+            Caption = 'Status', comment = 'ESP="Estado",ENA="Estat"';
+            ToolTip = 'The status of the course', comment = 'ESP="Estado del curso",ENA="Estat del curs"';
+        }
+
+        //Obsoleto usar opciones:
+        /*field(4; "Status"; Option)
         {
             Caption = 'Status', comment = 'ESP="Estado",ENA="Estat"';
             ToolTip = 'The status of the course', comment = 'ESP="Estado del curso",ENA="Estat del curs"';
             OptionMembers = Active,Closed,Standby;
             OptionCaption = 'Active,Closed,Standby', comment = 'ESP="Activo,Cerrado,En Espera",ENA="Actiu,Tancat,En Espera"';
         }
+        */
     }
 
     keys
