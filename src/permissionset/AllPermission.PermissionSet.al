@@ -7,5 +7,5 @@ permissionset 50501 AllPermission
         tabledata "CMC Course Enrollment" = RIMD,
         table "CMC Course" = X,
         report MyReport = X,
-        codeunit MyCodeunit = X;
+        codeunit "CMC Academy Management" = X;
 }
