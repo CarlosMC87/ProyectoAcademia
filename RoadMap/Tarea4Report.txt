@@ -1,0 +1,10 @@
+
+Objetivo: Crear un informe que muestre los alumnos inscritos en cada curso.
+
+    1- Definir un objeto Report con dos niveles de datos (DataItems): CMC Course y CMC Course Enrollment.
+
+    2- Aprender a relacionar los datos dentro del informe.
+
+    3- Generar un diseño básico en rdl.
+
+//////////////////////////////////////////////////////////////////////////////////////////////

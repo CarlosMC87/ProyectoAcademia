@@ -39,7 +39,6 @@ codeunit 50503 "CMC Academy Management"
             OtherEnrollments.SetRange("Customer No.", Rec."Customer No.");
             // Filtramos para NO contar la que estamos intentando borrar ahora
             OtherEnrollments.SetFilter("Course Code", '<>%1', 'BC-BASIC');
-
             // 3. Si encontramos algo, bloqueamos el borrado
             if not OtherEnrollments.IsEmpty() then
                 Error(DeleteBasicErr);

@@ -35,4 +35,30 @@ page 50505 "CMC Course List"
             }
         }
     }
+
+    // --- AQUÍ AÑADIMOS EL BOTÓN PARA IMPRIMIR INFORME---
+    actions
+    {
+        area(Reporting) // Esto lo coloca en la pestaña de Informes
+        {
+            action(PrintParticipants)
+            {
+                Caption = 'Print Participants', comment = 'ESP="Imprimir Participantes",ENA="Imprimir Participants"';
+                ToolTip = 'View the list of students enrolled in the selected course.', comment = 'ESP="Ver la lista de alumnos inscritos en el curso seleccionado.",ENA="Veure la llista d''alumnes inscrits en el curs seleccionat."';
+                ApplicationArea = All;
+                Image = PrintReport;
+                Promoted = true;
+                PromotedCategory = Report;
+
+                trigger OnAction()
+                var
+                    CourseRec: Record "CMC Course";
+                begin
+                    // Filtramos el informe para que solo salga el curso que tenemos seleccionado en la lista
+                    CourseRec.SetRange(Code, Rec.Code);
+                    Report.Run(Report::"CMC Course Participants", true, false, CourseRec);
+                end;
+            }
+        }
+    }
 }
