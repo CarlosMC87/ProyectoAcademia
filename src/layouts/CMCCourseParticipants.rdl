@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-02-24T16:32:06.7489377Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-02-25T11:29:55.8241623Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -105,7 +105,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=First(Fields!TxtCourseCodeCapLbl.Value, "DataSet_Result")</Value>
+                                  <Value>=Fields!TxtCourseCapLbl.Value</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>9pt</FontSize>
@@ -131,15 +131,15 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox16">
-                          <rd:DefaultName>Textbox16</rd:DefaultName>
+                        <Textbox Name="Textbox6">
+                          <rd:DefaultName>Textbox6</rd:DefaultName>
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=First(Fields!TxtCoursePriceCapLbl.Value, "DataSet_Result")</Value>
+                                  <Value>=Fields!TxtCoursePriceCapLbl.Value</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>9pt</FontSize>
@@ -173,7 +173,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=First(Fields!TxtCourseDescriptionCapLbl.Value, "DataSet_Result")</Value>
+                                  <Value>=Fields!TxtCourseDescriptionCapLbl.Value</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>9pt</FontSize>
@@ -207,7 +207,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=First(Fields!TxtCustomerNoCapLbl.Value, "DataSet_Result")</Value>
+                                  <Value>=Fields!TxtCustomerNoCapLbl.Value</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>9pt</FontSize>
@@ -241,7 +241,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=First(Fields!TxtCustomerNameCapLbl.Value, "DataSet_Result")</Value>
+                                  <Value>=Fields!TxtCustomerNameCapLbl.Value</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>9pt</FontSize>
@@ -275,7 +275,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=First(Fields!TxtDateCapLbl.Value, "DataSet_Result")</Value>
+                                  <Value>=Fields!TxtDateCapLbl.Value</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>9pt</FontSize>
@@ -339,8 +339,8 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox17">
-                          <rd:DefaultName>Textbox17</rd:DefaultName>
+                        <Textbox Name="Textbox16">
+                          <rd:DefaultName>Textbox16</rd:DefaultName>
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -407,8 +407,8 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="CustomerNo">
-                          <rd:DefaultName>CustomerNo</rd:DefaultName>
+                        <Textbox Name="Textbox9">
+                          <rd:DefaultName>Textbox9</rd:DefaultName>
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -440,8 +440,8 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="CustomerName">
-                          <rd:DefaultName>CustomerName</rd:DefaultName>
+                        <Textbox Name="CustomerNo">
+                          <rd:DefaultName>CustomerNo</rd:DefaultName>
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -581,15 +581,25 @@
                             </Paragraph>
                           </Paragraphs>
                           <Visibility>
-                            <Hidden>=Code.SetData(Cstr(Fields!CourseCode.Value) + Chr(177) +
-Cstr(Fields!CourseDescription.Value) + Chr(177) +
-Cstr(Fields!CustomerNo.Value) + Chr(177) +
-Cstr(Fields!CustomerName.Value) + Chr(177) +
-Cstr(Fields!EnrollmentDate.Value) +Chr(177) +
-Cstr(Fields!TxtReportTitleLbl.Value) + Chr(177) +
-Cstr(Fields!TxtCustomerNoCapLbl.Value) + Chr(177) +
-Cstr(Fields!TxtCustomerNameCapLbl.Value) + Chr(177) +
-Cstr(Fields!TxtDateCapLbl.Value), 1)</Hidden>
+                            <Hidden>=Code.SetData(Cstr(Fields!CourseCode.Value) + Chr(177) + 
+  Cstr(Fields!CourseDescription.Value) + Chr(177) + 
+  Cstr(Fields!TxtReportTitleLbl.Value) + Chr(177) + 
+  Cstr(Fields!TxtCourseCodeCapLbl.Value) + Chr(177) + 
+  Cstr(Fields!TxtCourseDescriptionCapLbl.Value) + Chr(177) +
+  Cstr(Fields!TxtCoursePriceCapLbl.Value) + Chr(177) +
+  Cstr(Fields!TxtCustomerNoCapLbl.Value) + Chr(177) +
+  Cstr(Fields!TxtCustomerNameCapLbl.Value) + Chr(177) +
+  Cstr(Fields!TxtDateCapLbl.Value) + Chr(177) +
+  Cstr(Fields!TxtCourseCapLbl.Value) + Chr(177) +
+  Cstr(Fields!Course_Price.Value) + Chr(177) +
+  Cstr(Fields!CustomerNo.Value) + Chr(177) +
+  Cstr(Fields!CustomerName.Value) + Chr(177) +
+  Cstr(Fields!EnrollmentDate.Value), 1)
+
+=Code.SetData(Cstr(Fields!TxtCopyRightCapLbl.Value) + Chr(177) + 
+  Cstr(Fields!TxtDeveloperAutorCapLbl.Value) + Chr(177) + 
+  Cstr(Fields!TxtDeveloperAutorNameCapLbl.Value) + Chr(177) + 
+  Cstr(Fields!TxtCompanyInfoDescriptionCapLbl.Value), 2)</Hidden>
                           </Visibility>
                           <Style>
                             <Border>
@@ -684,7 +694,7 @@ Cstr(Fields!TxtDateCapLbl.Value), 1)</Hidden>
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!TxtReportTitleLbl.Value, "DataSet_Result")</Value>
+                          <Value>=Code.GetData(3, 1)</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>14pt</FontSize>
@@ -718,7 +728,7 @@ Cstr(Fields!TxtDateCapLbl.Value), 1)</Hidden>
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=Fields!CourseDescription.Value &amp;" | "&amp; Fields!CourseCode.Value</Value>
+                          <Value>=Code.GetData(2, 1) &amp; " | " &amp; Code.GetData(1, 1)</Value>
                           <Style />
                         </TextRun>
                       </TextRuns>
@@ -788,7 +798,7 @@ Cstr(Fields!TxtDateCapLbl.Value), 1)</Hidden>
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!TxtDeveloperAutorCapLbl.Value, "DataSet_Result") &amp; " " &amp; First(Fields!TxtDeveloperAutorNameCapLbl.Value, "DataSet_Result")</Value>
+                          <Value>=Code.GetData(2, 2) &amp; Code.GetData(3, 2)</Value>
                           <Style />
                         </TextRun>
                       </TextRuns>
@@ -820,7 +830,7 @@ Cstr(Fields!TxtDateCapLbl.Value), 1)</Hidden>
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!TxtCopyRightCapLbl.Value, "DataSet_Result")</Value>
+                          <Value>=Code.GetData(1, 2)</Value>
                           <Style />
                         </TextRun>
                       </TextRuns>
@@ -853,7 +863,7 @@ Cstr(Fields!TxtDateCapLbl.Value), 1)</Hidden>
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!TxtCompanyInfoDescriptionCapLbl.Value, "DataSet_Result")</Value>
+                          <Value>=Code.GetData(4, 2)</Value>
                           <Style />
                         </TextRun>
                       </TextRuns>
@@ -908,92 +918,103 @@ Cstr(Fields!TxtDateCapLbl.Value), 1)</Hidden>
     </ReportSection>
   </ReportSections>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
-    if Value = 0 then
+    If Value = 0 Then
         Return ""
-    end if
+    End If
+
     Return Value
 End Function
 
 Public Function BlankPos(ByVal Value As Decimal)
-    if Value &gt; 0 then
+    If Value &gt; 0 Then
         Return ""
-    end if
+    End If
+
     Return Value
 End Function
 
 Public Function BlankZeroAndPos(ByVal Value As Decimal)
-    if Value &gt;= 0 then
+    If Value &gt;= 0 Then
         Return ""
-    end if
+    End If
+
     Return Value
 End Function
 
 Public Function BlankNeg(ByVal Value As Decimal)
-    if Value &lt; 0 then
+    If Value &lt; 0 Then
         Return ""
-    end if
+    End If
+
     Return Value
 End Function
 
 Public Function BlankNegAndZero(ByVal Value As Decimal)
-    if Value &lt;= 0 then
+    If Value &lt;= 0 Then
         Return ""
-    end if
+    End If
+
     Return Value
 End Function
 
-Shared Data1 as Object
-Shared Data2 as Object
-Shared Data3 as Object
-Shared Data4 as Object
+Shared Data1 As Object
+Shared Data2 As Object
+Shared Data3 As Object
+Shared Data4 As Object
 
-Public Function GetData(Num as Integer, Group as integer) as Object
-if Group = 1 then
-   Return Cstr(Choose(Num, Split(Cstr(Data1),Chr(177))))
-End If
+Public Function GetData(Num As Integer, Group As Integer) As Object
 
-if Group = 2 then
-   Return Cstr(Choose(Num, Split(Cstr(Data2),Chr(177))))
-End If
+    If Group = 1 Then
+        Return CStr(Choose(Num, Split(CStr(Data1), Chr(177))))
+    End If
 
-if Group = 3 then
-   Return Cstr(Choose(Num, Split(Cstr(Data3),Chr(177))))
-End If
+    If Group = 2 Then
+        Return CStr(Choose(Num, Split(CStr(Data2), Chr(177))))
+    End If
 
-if Group = 4 then
-   Return Cstr(Choose(Num, Split(Cstr(Data4),Chr(177))))
-End If
+    If Group = 3 Then
+        Return CStr(Choose(Num, Split(CStr(Data3), Chr(177))))
+    End If
+
+    If Group = 4 Then
+        Return CStr(Choose(Num, Split(CStr(Data4), Chr(177))))
+    End If
+
 End Function
 
-Public Function SetData(NewData as Object,Group as integer)
-  If Group = 1 and NewData &gt; "" Then
-      Data1 = NewData
-  End If
+Public Function SetData(NewData As Object, Group As Integer)
 
-  If Group = 2 and NewData &gt; "" Then
-      Data2 = NewData
-  End If
+    If Group = 1 And NewData &gt; "" Then
+        Data1 = NewData
+    End If
 
-  If Group = 3 and NewData &gt; "" Then
-      Data3 = NewData
-  End If
+    If Group = 2 And NewData &gt; "" Then
+        Data2 = NewData
+    End If
 
-  If Group = 4 and NewData &gt; "" Then
-      Data4 = NewData
-  End If
+    If Group = 3 And NewData &gt; "" Then
+        Data3 = NewData
+    End If
 
-  Return True
+    If Group = 4 And NewData &gt; "" Then
+        Data4 = NewData
+    End If
+
+    Return True
+
 End Function
 
-Public Function IsEmpty(value as Object) as boolean
-  On Error Resume Next
-  If Convert.ToBase64String(Value) = "" then
-      Return True
-  Else
-      Return False
-  End If
-End Function
-</Code>
+Public Function IsEmpty(Value As Object) As Boolean
+
+    On Error Resume Next
+
+    If Convert.ToBase64String(Value) = "" Then
+        Return True
+    Else
+        Return False
+    End If
+
+End Function</Code>
   <Language>=User!Language</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <DataSets>
@@ -1011,8 +1032,8 @@ End Function
         <Field Name="TxtCourseDescriptionCapLbl">
           <DataField>TxtCourseDescriptionCapLbl</DataField>
         </Field>
-        <Field Name="TxtCourseTxtCapLbl">
-          <DataField>TxtCourseTxtCapLbl</DataField>
+        <Field Name="TxtCourseCapLbl">
+          <DataField>TxtCourseCapLbl</DataField>
         </Field>
         <Field Name="TxtReportTitleLbl">
           <DataField>TxtReportTitleLbl</DataField>

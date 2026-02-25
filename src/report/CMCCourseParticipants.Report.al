@@ -15,7 +15,7 @@ report 50505 "CMC Course Participants"
             column(CourseDescription; Description) { }
             column(TxtCourseCodeCapLbl; TxtCourseCodeCapLbl) { }
             column(TxtCourseDescriptionCapLbl; TxtCourseDescriptionCapLbl) { }
-            column(TxtCourseTxtCapLbl; TxtCourseTxtCapLbl) { }
+            column(TxtCourseCapLbl; TxtCourseCapLbl) { }
             column(TxtReportTitleLbl; TxtReportTitleLbl) { }
             column(TxtCustomerNoCapLbl; TxtCustomerNoCapLbl) { }
             column(TxtCustomerNameCapLbl; TxtCustomerNameCapLbl) { }
@@ -61,10 +61,10 @@ report 50505 "CMC Course Participants"
         TxtDateCapLbl: Label 'Enrollment Date', comment = 'ESP="Fecha Inscripción",ENA="Data Inscripció"';
         TxtCourseCodeCapLbl: Label 'Course Code', comment = 'ESP="Código del Curso",ENA="Codi del Curs"';
         TxtCourseDescriptionCapLbl: Label 'Course Description', comment = 'ESP="Descripción del Curso",ENA="Descripció del Curs"';
+        TxtCourseCapLbl: Label 'Course', comment = 'ESP="Curso",ENA="Curs"';
+        TxtCoursePriceCapLbl: Label 'Price', comment = 'ESP="Precio",ENA="Preu"';
         TxtCustomerNoCapLbl: Label 'Customer No.', comment = 'ESP="Nº Cliente",ENA="Nº Client"';
         TxtCustomerNameCapLbl: Label 'Name', comment = 'ESP="Nombre",ENA="Nom"';
-        TxtCourseTxtCapLbl: Label 'Course', comment = 'ESP="Curso",ENA="Curs"';
-        TxtCoursePriceCapLbl: Label 'Price', comment = 'ESP="Precio",ENA="Preu"';
         TxtCopyRightCapLbl: Label 'Copyright © 2026';
         TxtDeveloperAutorCapLbl: Label 'Developer: ', comment = 'ESP="Desarrollador: ",ENA="Desenvolupador: "';
         TxtDeveloperAutorNameCapLbl: Label 'Carlos Merina Cirera', comment = 'ESP="Carlos Merina Cirera",ENA="Carlos Merina Cirera"';
