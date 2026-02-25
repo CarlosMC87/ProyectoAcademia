@@ -105,7 +105,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=First(Fields!CourseCodeCapLbl.Value, "DataSet_Result")</Value>
+                                  <Value>=First(Fields!TxtCourseCodeCapLbl.Value, "DataSet_Result")</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>9pt</FontSize>
@@ -139,7 +139,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=First(Fields!CoursePriceCapLbl.Value, "DataSet_Result")</Value>
+                                  <Value>=First(Fields!TxtCoursePriceCapLbl.Value, "DataSet_Result")</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>9pt</FontSize>
@@ -173,7 +173,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=First(Fields!CourseDescriptionCapLbl.Value, "DataSet_Result")</Value>
+                                  <Value>=First(Fields!TxtCourseDescriptionCapLbl.Value, "DataSet_Result")</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>9pt</FontSize>
@@ -207,7 +207,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=First(Fields!CustomerNoCapLbl.Value, "DataSet_Result")</Value>
+                                  <Value>=First(Fields!TxtCustomerNoCapLbl.Value, "DataSet_Result")</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>9pt</FontSize>
@@ -241,7 +241,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=First(Fields!CustomerNameCapLbl.Value, "DataSet_Result")</Value>
+                                  <Value>=First(Fields!TxtCustomerNameCapLbl.Value, "DataSet_Result")</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>9pt</FontSize>
@@ -275,7 +275,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=First(Fields!DateCapLbl.Value, "DataSet_Result")</Value>
+                                  <Value>=First(Fields!TxtDateCapLbl.Value, "DataSet_Result")</Value>
                                   <Style>
                                     <FontFamily>Segoe UI</FontFamily>
                                     <FontSize>9pt</FontSize>
@@ -586,10 +586,10 @@ Cstr(Fields!CourseDescription.Value) + Chr(177) +
 Cstr(Fields!CustomerNo.Value) + Chr(177) +
 Cstr(Fields!CustomerName.Value) + Chr(177) +
 Cstr(Fields!EnrollmentDate.Value) +Chr(177) +
-Cstr(Fields!ReportTitleLbl.Value) + Chr(177) +
-Cstr(Fields!CustomerNoCapLbl.Value) + Chr(177) +
-Cstr(Fields!CustomerNameCapLbl.Value) + Chr(177) +
-Cstr(Fields!DateCapLbl.Value), 1)</Hidden>
+Cstr(Fields!TxtReportTitleLbl.Value) + Chr(177) +
+Cstr(Fields!TxtCustomerNoCapLbl.Value) + Chr(177) +
+Cstr(Fields!TxtCustomerNameCapLbl.Value) + Chr(177) +
+Cstr(Fields!TxtDateCapLbl.Value), 1)</Hidden>
                           </Visibility>
                           <Style>
                             <Border>
@@ -684,7 +684,7 @@ Cstr(Fields!DateCapLbl.Value), 1)</Hidden>
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!ReportTitleLbl.Value, "DataSet_Result")</Value>
+                          <Value>=First(Fields!TxtReportTitleLbl.Value, "DataSet_Result")</Value>
                           <Style>
                             <FontFamily>Segoe UI</FontFamily>
                             <FontSize>14pt</FontSize>
@@ -788,7 +788,7 @@ Cstr(Fields!DateCapLbl.Value), 1)</Hidden>
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!DeveloperAutorCapLbl.Value, "DataSet_Result") &amp; " " &amp; First(Fields!DeveloperAutorNameCapLbl.Value, "DataSet_Result")</Value>
+                          <Value>=First(Fields!TxtDeveloperAutorCapLbl.Value, "DataSet_Result") &amp; " " &amp; First(Fields!TxtDeveloperAutorNameCapLbl.Value, "DataSet_Result")</Value>
                           <Style />
                         </TextRun>
                       </TextRuns>
@@ -820,7 +820,7 @@ Cstr(Fields!DateCapLbl.Value), 1)</Hidden>
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!CopyRightCapLbl.Value, "DataSet_Result")</Value>
+                          <Value>=First(Fields!TxtCopyRightCapLbl.Value, "DataSet_Result")</Value>
                           <Style />
                         </TextRun>
                       </TextRuns>
@@ -853,7 +853,7 @@ Cstr(Fields!DateCapLbl.Value), 1)</Hidden>
                     <Paragraph>
                       <TextRuns>
                         <TextRun>
-                          <Value>=First(Fields!CompanyInfoDescriptionCapLbl.Value, "DataSet_Result")</Value>
+                          <Value>=First(Fields!TxtCompanyInfoDescriptionCapLbl.Value, "DataSet_Result")</Value>
                           <Style />
                         </TextRun>
                       </TextRuns>
@@ -1002,44 +1002,44 @@ End Function
         <Field Name="CourseCode">
           <DataField>CourseCode</DataField>
         </Field>
-        <Field Name="CourseCodeCapLbl">
-          <DataField>CourseCodeCapLbl</DataField>
-        </Field>
         <Field Name="CourseDescription">
           <DataField>CourseDescription</DataField>
         </Field>
-        <Field Name="CourseDescriptionCapLbl">
-          <DataField>CourseDescriptionCapLbl</DataField>
+        <Field Name="TxtCourseCodeCapLbl">
+          <DataField>TxtCourseCodeCapLbl</DataField>
         </Field>
-        <Field Name="CourseTxtCapLbl">
-          <DataField>CourseTxtCapLbl</DataField>
+        <Field Name="TxtCourseDescriptionCapLbl">
+          <DataField>TxtCourseDescriptionCapLbl</DataField>
         </Field>
-        <Field Name="ReportTitleLbl">
-          <DataField>ReportTitleLbl</DataField>
+        <Field Name="TxtCourseTxtCapLbl">
+          <DataField>TxtCourseTxtCapLbl</DataField>
         </Field>
-        <Field Name="CustomerNoCapLbl">
-          <DataField>CustomerNoCapLbl</DataField>
+        <Field Name="TxtReportTitleLbl">
+          <DataField>TxtReportTitleLbl</DataField>
         </Field>
-        <Field Name="CustomerNameCapLbl">
-          <DataField>CustomerNameCapLbl</DataField>
+        <Field Name="TxtCustomerNoCapLbl">
+          <DataField>TxtCustomerNoCapLbl</DataField>
         </Field>
-        <Field Name="DateCapLbl">
-          <DataField>DateCapLbl</DataField>
+        <Field Name="TxtCustomerNameCapLbl">
+          <DataField>TxtCustomerNameCapLbl</DataField>
         </Field>
-        <Field Name="CoursePriceCapLbl">
-          <DataField>CoursePriceCapLbl</DataField>
+        <Field Name="TxtDateCapLbl">
+          <DataField>TxtDateCapLbl</DataField>
         </Field>
-        <Field Name="CopyRightCapLbl">
-          <DataField>CopyRightCapLbl</DataField>
+        <Field Name="TxtCoursePriceCapLbl">
+          <DataField>TxtCoursePriceCapLbl</DataField>
         </Field>
-        <Field Name="DeveloperAutorCapLbl">
-          <DataField>DeveloperAutorCapLbl</DataField>
+        <Field Name="TxtCopyRightCapLbl">
+          <DataField>TxtCopyRightCapLbl</DataField>
         </Field>
-        <Field Name="DeveloperAutorNameCapLbl">
-          <DataField>DeveloperAutorNameCapLbl</DataField>
+        <Field Name="TxtDeveloperAutorCapLbl">
+          <DataField>TxtDeveloperAutorCapLbl</DataField>
         </Field>
-        <Field Name="CompanyInfoDescriptionCapLbl">
-          <DataField>CompanyInfoDescriptionCapLbl</DataField>
+        <Field Name="TxtDeveloperAutorNameCapLbl">
+          <DataField>TxtDeveloperAutorNameCapLbl</DataField>
+        </Field>
+        <Field Name="TxtCompanyInfoDescriptionCapLbl">
+          <DataField>TxtCompanyInfoDescriptionCapLbl</DataField>
         </Field>
         <Field Name="CustomerNo">
           <DataField>CustomerNo</DataField>

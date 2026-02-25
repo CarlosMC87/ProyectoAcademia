@@ -12,19 +12,19 @@ report 50505 "CMC Course Participants"
         {
             PrintOnlyIfDetail = false;
             column(CourseCode; Code) { }
-            column(CourseCodeCapLbl; CourseCodeCapLbl) { }
             column(CourseDescription; Description) { }
-            column(CourseDescriptionCapLbl; CourseDescriptionCapLbl) { }
-            column(CourseTxtCapLbl; CourseTxtCapLbl) { }
-            column(ReportTitleLbl; ReportTitleLbl) { }
-            column(CustomerNoCapLbl; CustomerNoCapLbl) { }
-            column(CustomerNameCapLbl; CustomerNameCapLbl) { }
-            column(DateCapLbl; DateCapLbl) { }
-            column(CoursePriceCapLbl; CoursePriceCapLbl) { }
-            column(CopyRightCapLbl; CopyRightCapLbl) { }
-            column(DeveloperAutorCapLbl; DeveloperAutorCapLbl) { }
-            column(DeveloperAutorNameCapLbl; DeveloperAutorNameCapLbl) { }
-            column(CompanyInfoDescriptionCapLbl; CompanyInfoDescriptionCapLbl) { }
+            column(TxtCourseCodeCapLbl; TxtCourseCodeCapLbl) { }
+            column(TxtCourseDescriptionCapLbl; TxtCourseDescriptionCapLbl) { }
+            column(TxtCourseTxtCapLbl; TxtCourseTxtCapLbl) { }
+            column(TxtReportTitleLbl; TxtReportTitleLbl) { }
+            column(TxtCustomerNoCapLbl; TxtCustomerNoCapLbl) { }
+            column(TxtCustomerNameCapLbl; TxtCustomerNameCapLbl) { }
+            column(TxtDateCapLbl; TxtDateCapLbl) { }
+            column(TxtCoursePriceCapLbl; TxtCoursePriceCapLbl) { }
+            column(TxtCopyRightCapLbl; TxtCopyRightCapLbl) { }
+            column(TxtDeveloperAutorCapLbl; TxtDeveloperAutorCapLbl) { }
+            column(TxtDeveloperAutorNameCapLbl; TxtDeveloperAutorNameCapLbl) { }
+            column(TxtCompanyInfoDescriptionCapLbl; TxtCompanyInfoDescriptionCapLbl) { }
             dataitem(Enrollment; "CMC Course Enrollment")
             {
                 DataItemLink = "Course Code" = field("Code");
@@ -57,16 +57,16 @@ report 50505 "CMC Course Participants"
 
     // Sección de etiquetas para el layout
     var
-        ReportTitleLbl: Label 'Course Participants List', comment = 'ESP="Listado de Participantes por Curso",ENA="Llistat de Participants per Curs"';
-        DateCapLbl: Label 'Enrollment Date', comment = 'ESP="Fecha Inscripción",ENA="Data Inscripció"';
-        CourseCodeCapLbl: Label 'Course Code', comment = 'ESP="Código del Curso",ENA="Codi del Curs"';
-        CourseDescriptionCapLbl: Label 'Course Description', comment = 'ESP="Descripción del Curso",ENA="Descripció del Curs"';
-        CustomerNoCapLbl: Label 'Customer No.', comment = 'ESP="Nº Cliente",ENA="Nº Client"';
-        CustomerNameCapLbl: Label 'Name', comment = 'ESP="Nombre",ENA="Nom"';
-        CourseTxtCapLbl: Label 'Course', comment = 'ESP="Curso",ENA="Curs"';
-        CoursePriceCapLbl: Label 'Price', comment = 'ESP="Precio",ENA="Preu"';
-        CopyRightCapLbl: Label 'Copyright © 2026';
-        DeveloperAutorCapLbl: Label 'Developer: ', comment = 'ESP="Desarrollador: ",ENA="Desenvolupador: "';
-        DeveloperAutorNameCapLbl: Label 'Carlos Merina Cirera', comment = 'ESP="Carlos Merina Cirera",ENA="Carlos Merina Cirera"';
-        CompanyInfoDescriptionCapLbl: Label 'Created with the sole purpose of training the staff of Olivia Sistemas S.L.', comment = 'ESP="Creado con el unico fin de formar al personal de Olivia Sistemas S.L.",ENA="Creat amb l''unic fi de formar al personal de Olivia Sistemas S.L."';
+        TxtReportTitleLbl: Label 'Course Participants List', comment = 'ESP="Listado de Participantes por Curso",ENA="Llistat de Participants per Curs"';
+        TxtDateCapLbl: Label 'Enrollment Date', comment = 'ESP="Fecha Inscripción",ENA="Data Inscripció"';
+        TxtCourseCodeCapLbl: Label 'Course Code', comment = 'ESP="Código del Curso",ENA="Codi del Curs"';
+        TxtCourseDescriptionCapLbl: Label 'Course Description', comment = 'ESP="Descripción del Curso",ENA="Descripció del Curs"';
+        TxtCustomerNoCapLbl: Label 'Customer No.', comment = 'ESP="Nº Cliente",ENA="Nº Client"';
+        TxtCustomerNameCapLbl: Label 'Name', comment = 'ESP="Nombre",ENA="Nom"';
+        TxtCourseTxtCapLbl: Label 'Course', comment = 'ESP="Curso",ENA="Curs"';
+        TxtCoursePriceCapLbl: Label 'Price', comment = 'ESP="Precio",ENA="Preu"';
+        TxtCopyRightCapLbl: Label 'Copyright © 2026';
+        TxtDeveloperAutorCapLbl: Label 'Developer: ', comment = 'ESP="Desarrollador: ",ENA="Desenvolupador: "';
+        TxtDeveloperAutorNameCapLbl: Label 'Carlos Merina Cirera', comment = 'ESP="Carlos Merina Cirera",ENA="Carlos Merina Cirera"';
+        TxtCompanyInfoDescriptionCapLbl: Label 'Created with the sole purpose of training the staff of Olivia Sistemas S.L.', comment = 'ESP="Creado con el unico fin de formar al personal de Olivia Sistemas S.L.",ENA="Creat amb l''unic fi de formar al personal de Olivia Sistemas S.L."';
 }
