@@ -11,7 +11,7 @@
       <am:Name>MSRB</am:Name>
       <am:Version>15.1.30001.02</am:Version>
     </am:UpdatedBy>
-    <am:LastModifiedTimestamp>2026-02-26T10:47:36.7021859Z</am:LastModifiedTimestamp>
+    <am:LastModifiedTimestamp>2026-02-26T15:50:11.5888972Z</am:LastModifiedTimestamp>
   </am:AuthoringMetadata>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
@@ -24,106 +24,6 @@
       <rd:DataSourceID>8faa341e-90b7-45d7-bb91-642321d77a52</rd:DataSourceID>
     </DataSource>
   </DataSources>
-  <DataSets>
-    <DataSet Name="DataSet_Result">
-      <Query>
-        <DataSourceName>DataSource</DataSourceName>
-        <CommandText />
-      </Query>
-      <Fields>
-        <Field Name="CustomerNo">
-          <DataField>CustomerNo</DataField>
-        </Field>
-        <Field Name="CustomerName">
-          <DataField>CustomerName</DataField>
-        </Field>
-        <Field Name="CustomerAddress">
-          <DataField>CustomerAddress</DataField>
-        </Field>
-        <Field Name="CustomerAddress2">
-          <DataField>CustomerAddress2</DataField>
-        </Field>
-        <Field Name="CustomerCity">
-          <DataField>CustomerCity</DataField>
-        </Field>
-        <Field Name="CustomerPostCode">
-          <DataField>CustomerPostCode</DataField>
-        </Field>
-        <Field Name="CustomerCountry">
-          <DataField>CustomerCountry</DataField>
-        </Field>
-        <Field Name="CustomerPhone">
-          <DataField>CustomerPhone</DataField>
-        </Field>
-        <Field Name="CustomerEmail">
-          <DataField>CustomerEmail</DataField>
-        </Field>
-        <Field Name="CustomerVATNo">
-          <DataField>CustomerVATNo</DataField>
-        </Field>
-        <Field Name="TotalCourses">
-          <DataField>TotalCourses</DataField>
-        </Field>
-        <Field Name="TotalInvestment">
-          <DataField>TotalInvestment</DataField>
-        </Field>
-        <Field Name="TotalInvestmentFormat">
-          <DataField>TotalInvestmentFormat</DataField>
-        </Field>
-        <Field Name="TxtReportTitleLbl">
-          <DataField>TxtReportTitleLbl</DataField>
-        </Field>
-        <Field Name="TxtCourseCodeCapLbl">
-          <DataField>TxtCourseCodeCapLbl</DataField>
-        </Field>
-        <Field Name="TxtCourseDescriptionCapLbl">
-          <DataField>TxtCourseDescriptionCapLbl</DataField>
-        </Field>
-        <Field Name="TxtPriceCapLbl">
-          <DataField>TxtPriceCapLbl</DataField>
-        </Field>
-        <Field Name="TxtDateCapLbl">
-          <DataField>TxtDateCapLbl</DataField>
-        </Field>
-        <Field Name="TxtTotalCoursesCapLbl">
-          <DataField>TxtTotalCoursesCapLbl</DataField>
-        </Field>
-        <Field Name="TxtTotalInvCapLbl">
-          <DataField>TxtTotalInvCapLbl</DataField>
-        </Field>
-        <Field Name="TxtCopyRightCapLbl">
-          <DataField>TxtCopyRightCapLbl</DataField>
-        </Field>
-        <Field Name="TxtDeveloperAutorCapLbl">
-          <DataField>TxtDeveloperAutorCapLbl</DataField>
-        </Field>
-        <Field Name="TxtDeveloperAutorNameCapLbl">
-          <DataField>TxtDeveloperAutorNameCapLbl</DataField>
-        </Field>
-        <Field Name="TxtCompanyInfoDescriptionCapLbl">
-          <DataField>TxtCompanyInfoDescriptionCapLbl</DataField>
-        </Field>
-        <Field Name="TxtCustomerHeaderLbl">
-          <DataField>TxtCustomerHeaderLbl</DataField>
-        </Field>
-        <Field Name="CourseCode">
-          <DataField>CourseCode</DataField>
-        </Field>
-        <Field Name="CoursePrice">
-          <DataField>CoursePrice</DataField>
-        </Field>
-        <Field Name="CoursePriceFormat">
-          <DataField>CoursePriceFormat</DataField>
-        </Field>
-        <Field Name="EnrollmentDate">
-          <DataField>EnrollmentDate</DataField>
-        </Field>
-        <Field Name="CourseDescription">
-          <DataField>CourseDescription</DataField>
-        </Field>
-      </Fields>
-    </DataSet>
-  </DataSets>
   <ReportSections>
     <ReportSection>
       <Body>
@@ -882,9 +782,8 @@ Cstr(Fields!CustomerCountry.Value) + Chr(177) +
 Cstr(Fields!CustomerPhone.Value) + Chr(177) + 
 Cstr(Fields!CustomerEmail.Value) + Chr(177) + 
 Cstr(Fields!CustomerVATNo.Value) + Chr(177) + 
-Cstr(Fields!TxtCourseDescriptionCapLbl.Value) , 1) 
-
-
+Cstr(Fields!TxtCourseDescriptionCapLbl.Value) + Chr(177) + 
+Cstr(Fields!Notes.Value) , 1)
 =Code.SetData(Cstr(Fields!TxtCopyRightCapLbl.Value) + Chr(177) + 
 Cstr(Fields!TxtDeveloperAutorCapLbl.Value) + Chr(177) + 
 Cstr(Fields!TxtDeveloperAutorNameCapLbl.Value) + Chr(177) + 
@@ -942,6 +841,7 @@ Cstr(Fields!TxtCompanyInfoDescriptionCapLbl.Value), 2)</Hidden>
                         <Style>
                           <FontFamily>Segoe UI</FontFamily>
                           <FontSize>8pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -1004,6 +904,7 @@ Cstr(Fields!TxtCompanyInfoDescriptionCapLbl.Value), 2)</Hidden>
                         <Style>
                           <FontFamily>Segoe UI</FontFamily>
                           <FontSize>8pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -1066,6 +967,81 @@ Cstr(Fields!TxtCompanyInfoDescriptionCapLbl.Value), 2)</Hidden>
             <Height>1.2cm</Height>
             <Width>5cm</Width>
             <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Rectangle>
+          <Rectangle Name="Rectangle4">
+            <ReportItems>
+              <Textbox Name="Textbox1">
+                <rd:DefaultName>Textbox1</rd:DefaultName>
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Fields!Notes.Value</Value>
+                        <Style />
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>0.6985cm</Top>
+                <Height>0.6cm</Height>
+                <Width>14cm</Width>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox6">
+                <rd:DefaultName>Textbox1</rd:DefaultName>
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>="Nota de interes para destinatario:"</Value>
+                        <Style>
+                          <FontFamily>Segoe UI</FontFamily>
+                          <FontSize>8pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Height>0.6cm</Height>
+                <Width>7cm</Width>
+                <ZIndex>1</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+            <Top>3.82062cm</Top>
+            <Left>5.70653cm</Left>
+            <Height>1.5cm</Height>
+            <Width>14cm</Width>
+            <ZIndex>3</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1539,12 +1515,6 @@ Cstr(Fields!TxtCompanyInfoDescriptionCapLbl.Value), 2)</Hidden>
       </Page>
     </ReportSection>
   </ReportSections>
-  <ReportParametersLayout>
-    <GridLayoutDefinition>
-      <NumberOfColumns>4</NumberOfColumns>
-      <NumberOfRows>2</NumberOfRows>
-    </GridLayoutDefinition>
-  </ReportParametersLayout>
   <Code>Public Function BlankZero(ByVal Value As Decimal)
     if Value = 0 then
         Return ""
@@ -1640,4 +1610,107 @@ Public Function IsEmpty(Value As Object) As Boolean
 End Function</Code>
   <Language>=User!Language</Language>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <DataSets>
+    <DataSet Name="DataSet_Result">
+      <Fields>
+        <Field Name="CustomerNo">
+          <DataField>CustomerNo</DataField>
+        </Field>
+        <Field Name="CustomerName">
+          <DataField>CustomerName</DataField>
+        </Field>
+        <Field Name="CustomerAddress">
+          <DataField>CustomerAddress</DataField>
+        </Field>
+        <Field Name="CustomerAddress2">
+          <DataField>CustomerAddress2</DataField>
+        </Field>
+        <Field Name="CustomerCity">
+          <DataField>CustomerCity</DataField>
+        </Field>
+        <Field Name="CustomerPostCode">
+          <DataField>CustomerPostCode</DataField>
+        </Field>
+        <Field Name="CustomerCountry">
+          <DataField>CustomerCountry</DataField>
+        </Field>
+        <Field Name="CustomerPhone">
+          <DataField>CustomerPhone</DataField>
+        </Field>
+        <Field Name="CustomerEmail">
+          <DataField>CustomerEmail</DataField>
+        </Field>
+        <Field Name="CustomerVATNo">
+          <DataField>CustomerVATNo</DataField>
+        </Field>
+        <Field Name="TotalCourses">
+          <DataField>TotalCourses</DataField>
+        </Field>
+        <Field Name="TotalInvestment">
+          <DataField>TotalInvestment</DataField>
+        </Field>
+        <Field Name="TotalInvestmentFormat">
+          <DataField>TotalInvestmentFormat</DataField>
+        </Field>
+        <Field Name="TxtReportTitleLbl">
+          <DataField>TxtReportTitleLbl</DataField>
+        </Field>
+        <Field Name="TxtCourseCodeCapLbl">
+          <DataField>TxtCourseCodeCapLbl</DataField>
+        </Field>
+        <Field Name="TxtCourseDescriptionCapLbl">
+          <DataField>TxtCourseDescriptionCapLbl</DataField>
+        </Field>
+        <Field Name="TxtPriceCapLbl">
+          <DataField>TxtPriceCapLbl</DataField>
+        </Field>
+        <Field Name="TxtDateCapLbl">
+          <DataField>TxtDateCapLbl</DataField>
+        </Field>
+        <Field Name="TxtTotalCoursesCapLbl">
+          <DataField>TxtTotalCoursesCapLbl</DataField>
+        </Field>
+        <Field Name="TxtTotalInvCapLbl">
+          <DataField>TxtTotalInvCapLbl</DataField>
+        </Field>
+        <Field Name="TxtCopyRightCapLbl">
+          <DataField>TxtCopyRightCapLbl</DataField>
+        </Field>
+        <Field Name="TxtDeveloperAutorCapLbl">
+          <DataField>TxtDeveloperAutorCapLbl</DataField>
+        </Field>
+        <Field Name="TxtDeveloperAutorNameCapLbl">
+          <DataField>TxtDeveloperAutorNameCapLbl</DataField>
+        </Field>
+        <Field Name="TxtCompanyInfoDescriptionCapLbl">
+          <DataField>TxtCompanyInfoDescriptionCapLbl</DataField>
+        </Field>
+        <Field Name="TxtCustomerHeaderLbl">
+          <DataField>TxtCustomerHeaderLbl</DataField>
+        </Field>
+        <Field Name="Notes">
+          <DataField>Notes</DataField>
+        </Field>
+        <Field Name="CourseCode">
+          <DataField>CourseCode</DataField>
+        </Field>
+        <Field Name="CoursePrice">
+          <DataField>CoursePrice</DataField>
+        </Field>
+        <Field Name="CoursePriceFormat">
+          <DataField>CoursePriceFormat</DataField>
+        </Field>
+        <Field Name="EnrollmentDate">
+          <DataField>EnrollmentDate</DataField>
+        </Field>
+        <Field Name="CourseDescription">
+          <DataField>CourseDescription</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSource</DataSourceName>
+        <CommandText />
+      </Query>
+    </DataSet>
+  </DataSets>
 </Report>

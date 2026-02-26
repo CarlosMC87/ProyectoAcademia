@@ -28,7 +28,6 @@ table 50505 "CMC Course"
             Caption = 'Status', comment = 'ESP="Estado",ENA="Estat"';
             ToolTip = 'The status of the course', comment = 'ESP="Estado del curso",ENA="Estat del curs"';
         }
-
         //Obsoleto usar opciones:
         /*field(4; "Status"; Option)
         {

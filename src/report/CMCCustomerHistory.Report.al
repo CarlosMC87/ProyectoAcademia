@@ -23,7 +23,6 @@ report 50506 "CMC Customer History"
             column(CustomerPhone; "Phone No.") { }
             column(CustomerEmail; "E-Mail") { }
             column(CustomerVATNo; "VAT Registration No.") { }
-
             // Calculamos los totales antes de enviar la fila al dataset
             column(TotalCourses; AcademyMgt.GetTotalCourses("No.")) { }
             column(TotalInvestment; AcademyMgt.GetTotalInvestment("No.")) { }
@@ -41,6 +40,7 @@ report 50506 "CMC Customer History"
             column(TxtDeveloperAutorNameCapLbl; TxtDeveloperAutorNameCapLbl) { }
             column(TxtCompanyInfoDescriptionCapLbl; TxtCompanyInfoDescriptionCapLbl) { }
             column(TxtCustomerHeaderLbl; TxtCustomerHeaderLbl) { }
+            column(Notes; "CMC Notes") { }
 
             dataitem(Enrollment; "CMC Course Enrollment")
             {
@@ -64,7 +64,6 @@ report 50506 "CMC Customer History"
 
     var
         AcademyMgt: Codeunit "CMC Academy Management";
-
         // Etiquetes Labels
         TxtCustomerHeaderLbl: Label 'CUSTOMER', comment = 'ESP="CLIENTE",ENA="CLIENT"';
         TxtReportTitleLbl: Label 'Historial de Inscripciones', comment = 'ESP="Historial Inscripciones Cliente",ENA="Historial Inscripcions Client"';

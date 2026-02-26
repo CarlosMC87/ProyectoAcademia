@@ -112,4 +112,41 @@ codeunit 50503 "CMC Academy Management"
             exit(Cust.Name);
         exit('');
     end;
+
+    procedure SendHistoryByEmail(CustNo: Code[20])
+    var
+        Customer: Record Customer;
+        Email: Codeunit Email;
+        EmailMsg: Codeunit "Email Message";
+        TempBlob: Codeunit "Temp Blob";
+        OutStr: OutStream;
+        InStr: InStream;
+        ReportRecRef: RecordRef;
+        FldRef: FieldRef;
+        // Etiquetas para traducciones
+        MailSubjectMsg: Label 'Course History - %1', comment = 'ESP="Historial Cursos - %1",ENA="Historial Cursos - %1"';
+    begin
+        // 1. Validaciones
+        if not Customer.Get(CustNo) then exit;
+        if Customer."E-Mail" = '' then
+            Error('El cliente %1 no tiene email.', Customer.Name);
+
+        // 2. Preparar Filtro (Corregido para image_89a826.png)
+        ReportRecRef.Open(Database::Customer);
+        FldRef := ReportRecRef.Field(Customer.FieldNo("No."));
+        FldRef.SetRange(CustNo); // Usamos el valor recibido por parámetro
+
+        // 3. Generar PDF
+        TempBlob.CreateOutStream(OutStr);
+        Report.SaveAs(Report::"CMC Customer History", '', ReportFormat::Pdf, OutStr, ReportRecRef);
+        TempBlob.CreateInStream(InStr);
+
+        // 4. Crear Mensaje
+        EmailMsg.Create(Customer."E-Mail", StrSubstNo(MailSubjectMsg, Customer.Name), 'Adjuntamos su historial.', true);
+        EmailMsg.AddAttachment('History.pdf', 'application/pdf', InStr);
+
+        // 5. Abrir el editor (Corregido según image_89a422.png)
+        // Usamos el nuevo nombre del método y el escenario por defecto
+        Email.OpenInEditor(EmailMsg, Enum::"Email Scenario"::Default);
+    end;
 }
