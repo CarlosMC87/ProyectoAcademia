@@ -55,4 +55,61 @@ codeunit 50503 "CMC Academy Management"
         // Si NO está vacío, es que tiene el curso.
         exit(not Enrollment.IsEmpty());
     end;
+
+    // 1. Lógica AL: Crear funciones GetTotalCourses y GetTotalInvestment para calcular
+    // datos agregados en tiempo de ejecución.
+    // Función auxiliar para contar cursos
+    procedure GetTotalCourses(CustomerNo: Code[20]): Integer
+    var
+        Enrollment: Record "CMC Course Enrollment";
+    begin
+        Enrollment.SetRange("Customer No.", CustomerNo);
+        // Si queremos contar solo los activos, descomentar la línea de abajo
+        // Enrollment.SetFilter("Status", '<>%1', Enrollment.Status::Cancelled);
+        exit(Enrollment.Count());
+    end;
+
+    // Función auxiliar para sumar precios.
+    procedure GetTotalInvestment(CustomerNo: Code[20]): Decimal
+    var
+        Enrollment: Record "CMC Course Enrollment";
+        Total: Decimal;
+    begin
+        Enrollment.SetRange("Customer No.", CustomerNo);
+        // Recorremos las inscripciones del cliente.
+        if Enrollment.FindSet() then
+            repeat
+                Total += GetCoursePrice(Enrollment."Course Code");
+            until Enrollment.Next() = 0;
+        exit(Total);
+    end;
+
+    // Función auxiliar para obtener el precio de un curso.
+    procedure GetCoursePrice(CourseCode: Code[20]): Decimal
+    var
+        Course: Record "CMC Course";
+    begin
+        if Course.Get(CourseCode) then
+            exit(Course.Price);
+        exit(0);
+    end;
+
+    // Función auxiliar para obtener la descripción de un curso.
+    procedure GetCourseDescription(CourseCode: Code[20]): Text
+    var
+        Course: Record "CMC Course";
+    begin
+        if Course.Get(CourseCode) then
+            exit(Course.Description);
+        exit('');
+    end;
+
+    procedure GetCustomerName(CustNo: Code[20]): Text[100]
+    var
+        Cust: Record Customer;
+    begin
+        if Cust.Get(CustNo) then
+            exit(Cust.Name);
+        exit('');
+    end;
 }

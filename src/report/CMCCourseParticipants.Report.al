@@ -29,7 +29,7 @@ report 50505 "CMC Course Participants"
             {
                 DataItemLink = "Course Code" = field("Code");
                 column(CustomerNo; "Customer No.") { }
-                column(CustomerName; GetCustomerName("Customer No.")) { }
+                column(CustomerName; AcademyMgt.GetCustomerName("Customer No.")) { }
                 column(EnrollmentDate; "Enrollment Date") { }
                 column(Course_Price; "Course Price") { }
             }
@@ -46,17 +46,9 @@ report 50505 "CMC Course Participants"
         }
     }
 
-    local procedure GetCustomerName(CustNo: Code[20]): Text[100]
-    var
-        Cust: Record Customer;
-    begin
-        if Cust.Get(CustNo) then
-            exit(Cust.Name);
-        exit('');
-    end;
-
     // Sección de etiquetas para el layout
     var
+        AcademyMgt: Codeunit "CMC Academy Management";
         TxtReportTitleLbl: Label 'Course Participants List', comment = 'ESP="Listado de Participantes por Curso",ENA="Llistat de Participants per Curs"';
         TxtDateCapLbl: Label 'Enrollment Date', comment = 'ESP="Fecha Inscripción",ENA="Data Inscripció"';
         TxtCourseCodeCapLbl: Label 'Course Code', comment = 'ESP="Código del Curso",ENA="Codi del Curs"';

@@ -1,0 +1,16 @@
+Objetivo: Crear un informe de "Historial de Inscripciones" desde la ficha del cliente.
+
+    1- Lógica AL: Crear funciones GetTotalCourses y GetTotalInvestment para calcular
+    datos agregados en tiempo de ejecución.
+
+    2- DataSet: Definir una estructura jerárquica donde el dataitem(Customer) mande
+    sobre el dataitem(Enrollment).
+
+    3- UI: Insertar la acción "Imprimir Historial" en la Customer Card, específicamente en la
+    sección de inscripciones.
+
+    4- Cálculos en Layout: Mostrar sumatorios al final de la tabla para reflejar la
+    inversión total del alumno.
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+

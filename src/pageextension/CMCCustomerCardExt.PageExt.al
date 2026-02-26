@@ -2,7 +2,7 @@ pageextension 50505 "CMC Customer Card Ext" extends "Customer Card"
 {
     layout
     {
-        //Añadimos los cursos al final de la ficha del cliente
+        //Añadimos los cursos (subpágina) al final de la ficha del cliente.
         addlast(Content)
         {
             part(CourseEnrollments; "CMC Course Enrollm. Subpage")
@@ -13,6 +13,7 @@ pageextension 50505 "CMC Customer Card Ext" extends "Customer Card"
             }
         }
 
+        // Añadimos el grupo de resumen en la pestaña General.
         addlast(General)
         {
             group("CMC AcademySummary")
@@ -38,40 +39,14 @@ pageextension 50505 "CMC Customer Card Ext" extends "Customer Card"
         }
     }
     var
+        AcademyMgt: Codeunit "CMC Academy Management"; // Instanciamos la codeunit
         TotalCoursesVar: Integer;
         TotalInvestmentVar: Decimal;
 
     //Este trigger se ejecuta cada vez que cambias de cliente o abres la ficha
     trigger OnAfterGetRecord()
     begin
-        CalculateAcademyStats();
-    end;
-
-    local procedure CalculateAcademyStats()
-    var
-        CourseEnrollment: Record "CMC Course Enrollment";
-    begin
-        //Reset de variables
-        TotalCoursesVar := 0;
-        TotalInvestmentVar := 0;
-
-        //Filtramos las inscripciones de este cliente
-        CourseEnrollment.SetRange("Customer No.", Rec."No.");
-
-        if CourseEnrollment.FindSet() then
-            repeat
-                TotalCoursesVar += 1;
-                //Calculamos el precio (esto es más seguro que el FlowField anterior)
-                TotalInvestmentVar += GetCoursePrice(CourseEnrollment."Course Code");
-            until CourseEnrollment.Next() = 0;
-    end;
-
-    local procedure GetCoursePrice(CourseCode: Code[20]): Decimal
-    var
-        Course: Record "CMC Course";
-    begin
-        if Course.Get(CourseCode) then
-            exit(Course.Price);
-        exit(0);
+        TotalCoursesVar := AcademyMgt.GetTotalCourses(Rec."No.");
+        TotalInvestmentVar := AcademyMgt.GetTotalInvestment(Rec."No.");
     end;
 }
