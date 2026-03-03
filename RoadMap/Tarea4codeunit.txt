@@ -1,0 +1,43 @@
+Objetivo 1: Impedir que se inscriban clientes en cursos que tengan el estado "Cerrado".
+
+    1- Crear una Codeunit llamada CMC Academy Management.
+
+        En Business Central, no solemos escribir validaciones pesadas directamente en las tablas.
+        Usamos Codeunits que "escuchan" lo que pasa en las tablas.
+        Así el código queda mucho más limpio y organizado.
+
+    2- Suscribirse al evento OnBeforeInsert de la tabla CMC Course Enrollment.
+
+    3- Buscar el curso relacionado y comprobar su campo Status.
+
+    4- Lanzar un error si el curso está en estado "Closed", bloqueando la inserción.
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+Objetivo 2: Implementar una jerarquía de cursos.
+
+    1- Permitir siempre la compra del curso BC-BASIC.
+
+    2- Para el resto de cursos, comprobar si el estado es Closed.
+
+    3- Bloquear la compra si el curso está cerrado (ej. el BC-DEV (ADVANCE) de tu captura).
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+Objetivo 3: Impedir la compra de cursos avanzados si no se posee el curso básico.
+
+    1- Si el curso a inscribir es BC-DEV o BC-DEV (ADVANCE), verificar si el cliente ya tiene una inscripción en BC-BASIC.
+
+    2- Usar SetRange y IsEmpty para buscar en la tabla de inscripciones.
+
+    3- Lanzar un error específico si no se cumple el requisito.
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+Objetivo 4: Impedir el borrado del curso básico si existen inscripciones en cursos avanzados.
+
+    1- Suscribirse al evento OnBeforeDelete de la tabla CMC Course Enrollment.
+
+    2- Si el registro que se intenta borrar es BC-BASIC, comprobar si el cliente tiene otros cursos inscritos.
+
+    3- Lanzar un error si el cliente aún posee cursos que dependen del básico.

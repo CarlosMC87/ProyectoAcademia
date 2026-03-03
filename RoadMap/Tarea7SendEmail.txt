@@ -1,0 +1,13 @@
+Objetivo: Automatizar el envío del informe de historial mediante el sistema de correo electrónico de Business Central.
+
+1- Lógica AL (Generación): Uso de las codeunits TempBlob y RecordRef para generar el informe "CMC Customer History"
+    en formato PDF y almacenarlo en memoria mediante Streams.
+
+2- Filtrado Dinámico: Implementación de FieldRef para aplicar un filtro estricto por Customer No.,
+    asegurando que el PDF adjunto contenga solo la información del cliente seleccionado.
+
+3- Integración con Email: Creación del mensaje mediante la codeunit Email Message,
+    configurando dinámicamente el destinatario, el asunto y adjuntando el stream del PDF generado.
+
+4- UI y UX: Invocación del editor de correo con el método OpenInEditor, permitiendo al usuario visualizar, 
+    editar y confirmar el envío desde la interfaz estándar de Business Central.

@@ -1,0 +1,8 @@
+
+Objetivo: Profesionalizar la estructura de datos y crear la interfaz de unión.
+
+1- Crear un objeto Enum para el estado del curso.
+
+2- Crear una ListPart (Subpágina) para las inscripciones.
+
+3- Insertar dicha subpágina en la Customer Card para ver los cursos del cliente en tiempo real.

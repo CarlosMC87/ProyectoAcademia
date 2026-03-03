@@ -1,0 +1,7 @@
+Objetivo: Definir la entidad "Curso" y su interfaz de usuario.
+
+1- Crear la tabla CMC Course con campos de código, descripción, precio y estado.
+
+2- Crear la página CMC Course List para permitir la creación y edición de los cursos.
+
+3- Crear la tabla CMC Course Enrollment para establecer la relación N:M entre Clientes y Cursos.

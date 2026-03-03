@@ -1,0 +1,11 @@
+Objetivo: Mostrar en la cabecera del cliente el resumen de su actividad formativa.
+
+1- Añadir el contador de cursos (CMC Total Courses) en la tabla Customer.
+
+2- Añadir el campo de inversión total (CMC Total Investment) sumando los precios.
+
+3- Refrescar la UI para que los datos sean visibles y clicables (DrillDown).
+
+4- Crear variables globales en la PageExtension.
+
+5- Usar el trigger OnAfterGetRecord para calcular los valores manualmente.
