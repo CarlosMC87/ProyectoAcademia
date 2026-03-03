@@ -13,3 +13,20 @@
 
 # --- Traducciones ---
 Translations/
+
+# --- Word ---
+*.doc
+*.docx
+*.dot
+*.dotx
+*.docm
+
+# --- Excel ---
+*.xls
+*.xlsx
+*.xlsm
+
+# --- Compressed files ---
+*.zip
+*.rar
+*.7z
