@@ -1,0 +1,29 @@
+Tarea 8: Auditoría de Precios (Mastering CRUD & Filters)
+
+    1. El Escenario
+    Queremos guardar un rastro de todos los cambios de precio. Para ello, necesitaremos:
+        1.1. Table: "CMC Course Price History" para guardar los registros.
+        1.2. Logica: Un suscriptor que detecte el cambio de precio en la tabla de Cursos.
+        1.3. Operations: Usaremos Insert para nuevos registros, SetRange/SetFilter para buscar cambios anteriores y 
+                Modify si queremos actualizar algún estado.
+
+    2. Los retos técnicos que practicaremos:
+        2.1. Get: Para obtener el registro del curso antes de que se guarde el cambio.
+        2.2. SetRange / SetFilter: Para buscar en la tabla de histórico si ese curso ya ha tenido cambios hoy.
+        2.3. IsEmpty / FindFirst: Para decidir si insertamos un registro nuevo o modificamos uno existente.
+        2.4. Insert: Para crear la línea de auditoría.
+        2.5. Modify: Para marcar registros antiguos como "Obsoletos".
+    
+Objetivo: Implementar un sistema de auditoría de cambios de precio mediante lógica CRUD y filtros avanzados.
+
+    1. Modelo de Datos: Creación de la tabla CMC Course Price History para almacenar el rastro de 
+        cambios (Precio antiguo, nuevo, fecha y usuario).
+    2. Lógica CRUD: Uso de OnBeforeModifyEvent para comparar Rec con xRec. Implementación de lógica "Upsert"
+        con SetRange, Modify e Insert para agrupar cambios diarios.
+    3. Interfaz de Auditoría: Desarrollo de una página de tipo List protegida (Editable = false) para
+        consultar los movimientos registrados.
+    4. Navegación:
+        4.1. Inserción de una acción en la lista de cursos que utiliza Page.Run con filtros dinámicos para
+            mostrar el historial específico del curso seleccionado.
+        4.2. Inserción de una acción en la lista de cursos que utiliza Page.Run con filtros dinámicos para mostrar el
+            historial específico del curso seleccionado.
