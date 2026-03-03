@@ -60,5 +60,30 @@ page 50505 "CMC Course List"
                 end;
             }
         }
+        area(Navigation)
+        {
+            action(ShowHistory)
+            {
+                Caption = 'Show History', comment = 'ESP="Mostrar Historial",ENA="Mostrar Historial"';
+                ToolTip = 'View the history of the selected course.', comment = 'ESP="Ver el historial del curso seleccionado.",ENA="Veure l''historial del curs seleccionat."';
+                ApplicationArea = All;
+                Image = History;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+
+                trigger OnAction()
+                var
+                    PriceHistory: Record "CMC Course Price History";
+                begin
+                    PriceHistory.Reset();
+                    // 1. Filtramos la tabla de destino por el código del curso actual
+                    PriceHistory.SetRange("Course Code", Rec.Code);
+
+                    // 2. Abrimos la página pasando el registro ya filtrado
+                    Page.Run(Page::"CMC Course Price History List", PriceHistory);
+                end;
+            }
+        }
     }
 }

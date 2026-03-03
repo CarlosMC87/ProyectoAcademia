@@ -117,13 +117,12 @@ codeunit 50503 "CMC Academy Management"
     var
         Customer: Record Customer;
         Email: Codeunit Email;
-        EmailMsg: Codeunit "Email Message";
         TempBlob: Codeunit "Temp Blob";
-        OutStr: OutStream;
-        InStr: InStream;
+        EmailMsg: Codeunit "Email Message";
         ReportRecRef: RecordRef;
         FldRef: FieldRef;
-        // Etiquetas para traducciones
+        OutStr: OutStream;
+        InStr: InStream;
         MailSubjectMsg: Label 'Course History - %1', comment = 'ESP="Historial Cursos - %1",ENA="Historial Cursos - %1"';
     begin
         // 1. Validaciones
@@ -148,5 +147,38 @@ codeunit 50503 "CMC Academy Management"
         // 5. Abrir el editor (Corregido según image_89a422.png)
         // Usamos el nuevo nombre del método y el escenario por defecto
         Email.OpenInEditor(EmailMsg, Enum::"Email Scenario"::Default);
+    end;
+
+    /// <summary>
+    /// Suscriptor para auditar cambios de precio en la tabla Curso.
+    /// Utiliza 'xRec' para capturar el valor histórico (antes de la modificación) 
+    /// y 'Rec' para el valor nuevo. Cada cambio genera un registro único en la 
+    /// tabla de histórico, permitiendo un seguimiento cronológico exacto de la 
+    /// evolución de precios, incluyendo fecha, hora y usuario.
+    /// @param Rec El registro actual (después de la modificación).
+    /// @param xRec El registro anterior (antes de la modificación).
+    /// </summary>
+
+    [EventSubscriber(ObjectType::Table, Database::"CMC Course", 'OnBeforeModifyEvent', '', false, false)]
+    local procedure OnBeforeModifyEventCourse(var Rec: Record "CMC Course"; var xRec: Record "CMC Course")
+    var
+        CoursePriceHistory: Record "CMC Course Price History";
+    begin
+        // 1. Solo registramos si el precio ha cambiado de verdad
+        if Rec.Price = xRec.Price then
+            exit;
+
+        CoursePriceHistory.Reset();
+        CoursePriceHistory.Init();
+        // Asignamos la clave primaria del curso
+        CoursePriceHistory."Course Code" := Rec.Code;
+        // 2. LA CLAVE: El precio anterior viene de xRec (el pasado)
+        CoursePriceHistory."Old Price" := xRec.Price;
+        // 3. El precio nuevo viene de Rec (el presente)
+        CoursePriceHistory."New Price" := Rec.Price;
+        CoursePriceHistory."Change Date" := CurrentDateTime;
+        CoursePriceHistory."User ID" := UserId;
+        // 4. Insertamos una línea nueva cada vez para ver la evolución
+        CoursePriceHistory.Insert(true);
     end;
 }
